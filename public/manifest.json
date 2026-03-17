@@ -1,0 +1,24 @@
+{
+  "name": "발레로그",
+  "short_name": "발레로그",
+  "description": "취미 발레인을 위한 발레 용어, 수업 기록, 비용 관리를 한 번에 정리하는 발레로그.",
+  "lang": "ko-KR",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdf2f8",
+  "theme_color": "#f472b6",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
