@@ -5,7 +5,6 @@ export const BALLET_TERMS = [
     korean: "플리에",
     category: "기초",
     description: "무릎을 굽혔다 펴는 기본 동작으로, 다리 라인과 턴아웃을 준비하는 가장 기초적인 움직임.",
-    youtubeUrl: "https://www.youtube.com/watch?v=SJh2oPqH3UA",
   },
   {
     id: "demi-plie",
@@ -13,7 +12,6 @@ export const BALLET_TERMS = [
     korean: "드미 플리에",
     category: "기초",
     description: "무릎을 끝까지 굽히지 않고 절반만 부드럽게 굽혔다 펴는 플리에.",
-    youtubeUrl: "https://www.youtube.com/watch?v=Y5q1RR2aH9Q",
   },
   {
     id: "grand-plie",
@@ -21,7 +19,6 @@ export const BALLET_TERMS = [
     korean: "그랑 플리에",
     category: "기초",
     description: "무릎을 깊게 굽혔다가 다시 펴는 플리에로, 하체 근력과 유연성을 기르는 동작.",
-    youtubeUrl: "https://www.youtube.com/watch?v=2Z9JkVYlJ5s",
   },
   {
     id: "tendu",
@@ -29,7 +26,6 @@ export const BALLET_TERMS = [
     korean: "탕듀",
     category: "바레슨",
     description: "발끝을 바닥에 밀어 내듯이 뻗어주는 동작으로, 발목과 발등 라인을 만드는 기본 동작.",
-    youtubeUrl: "https://www.youtube.com/watch?v=3DJtq4oYxMU",
   },
   {
     id: "degages",
@@ -37,7 +33,6 @@ export const BALLET_TERMS = [
     korean: "데가제",
     category: "바레슨",
     description: "탕듀보다 조금 더 발을 띄워 날카롭게 뻗어주는 동작으로, 속도와 악센트를 연습할 때 사용.",
-    youtubeUrl: "https://www.youtube.com/watch?v=cn4GcS2nZVE",
   },
   {
     id: "rond-de-jambe-a-terre",
@@ -45,7 +40,6 @@ export const BALLET_TERMS = [
     korean: "롱 드 잠 아 떼르",
     category: "바레슨",
     description: "다리를 바닥에서 원을 그리며 돌리는 동작으로, 힙 관절의 턴아웃과 유연성을 키움.",
-    youtubeUrl: "https://www.youtube.com/watch?v=4VtRuqpRNTM",
   },
   {
     id: "rond-de-jambe-en-lair",
@@ -53,7 +47,6 @@ export const BALLET_TERMS = [
     korean: "롱 드 잠 앙 레르",
     category: "센터",
     description: "공중에서 다리로 원을 그리는 동작으로, 중심과 컨트롤이 필요한 센터 동작.",
-    youtubeUrl: "https://www.youtube.com/watch?v=7xB6fXENmug",
   },
   {
     id: "frappe",
@@ -61,7 +54,6 @@ export const BALLET_TERMS = [
     korean: "프라페",
     category: "바레슨",
     description: "발을 바닥에 치듯이 빠르게 뻗는 동작으로, 알레그로를 위한 탄력을 준비.",
-    youtubeUrl: "https://www.youtube.com/watch?v=F8Wm2Vd4Hi0",
   },
   {
     id: "fondu",
@@ -69,7 +61,6 @@ export const BALLET_TERMS = [
     korean: "퐁뒤",
     category: "바레슨",
     description: "한쪽 다리는 플리에, 다른 쪽은 뻗으며 동시에 내려갔다 올라오는 동작.",
-    youtubeUrl: "https://www.youtube.com/watch?v=A5lVPQeu7u4",
   },
   {
     id: "developpe",
@@ -77,7 +68,6 @@ export const BALLET_TERMS = [
     korean: "데블로페",
     category: "센터",
     description: "무릎을 먼저 들어 올린 뒤 다리를 길게 뻗어주는 동작으로, 다리 라인과 중심을 강조.",
-    youtubeUrl: "https://www.youtube.com/watch?v=upbNpXW1TjY",
   },
   {
     id: "grand-battement",
@@ -85,7 +75,6 @@ export const BALLET_TERMS = [
     korean: "그랑 바뜨망",
     category: "바레슨",
     description: "다리를 크게 차올리는 동작으로, 다리의 높이와 다이내믹을 연습.",
-    youtubeUrl: "https://www.youtube.com/watch?v=RTl3KKl16O0",
   },
   {
     id: "releve",
@@ -93,7 +82,6 @@ export const BALLET_TERMS = [
     korean: "르르베",
     category: "기초",
     description: "발꿈치를 들어 올라가 까치발로 서는 동작으로, 발목과 종아리 근력을 기름.",
-    youtubeUrl: "https://www.youtube.com/watch?v=nB2YqsSVqL8",
   },
   {
     id: "saute",
@@ -101,7 +89,6 @@ export const BALLET_TERMS = [
     korean: "소테",
     category: "알레그로",
     description: "기본 점프 동작으로, 두 발로 뛰어올랐다 두 발로 착지하는 점프.",
-    youtubeUrl: "https://www.youtube.com/watch?v=2IWG0Vn_s5g",
   },
   {
     id: "echappe",
@@ -109,7 +96,6 @@ export const BALLET_TERMS = [
     korean: "에샤페",
     category: "알레그로",
     description: "두 발을 모은 포지션에서 벌려 뛰어오르는 동작으로, 포지션 전환에 자주 사용.",
-    youtubeUrl: "https://www.youtube.com/watch?v=_zYfV7N1m1g",
   },
   {
     id: "changement",
@@ -117,7 +103,6 @@ export const BALLET_TERMS = [
     korean: "샤망",
     category: "알레그로",
     description: "5번 포지션에서 점프해 공중에서 앞뒤 발을 바꾸어 착지하는 동작.",
-    youtubeUrl: "https://www.youtube.com/watch?v=sy8nJQqPhnI",
   },
   {
     id: "assemble",
@@ -125,7 +110,6 @@ export const BALLET_TERMS = [
     korean: "아상블레",
     category: "알레그로",
     description: "한 발로 뛰어올라 공중에서 두 발을 모아 착지하는 점프 동작.",
-    youtubeUrl: "https://www.youtube.com/watch?v=Ff0p5Hnxo_4",
   },
   {
     id: "jete",
@@ -133,7 +117,6 @@ export const BALLET_TERMS = [
     korean: "제떼",
     category: "알레그로",
     description: "한 발에서 다른 발로 점프해 이동하는 동작으로, 가볍고 빠른 느낌이 특징.",
-    youtubeUrl: "https://www.youtube.com/watch?v=3O4E1X2oXf8",
   },
   {
     id: "grand-jete",
@@ -141,7 +124,6 @@ export const BALLET_TERMS = [
     korean: "그랑 제떼",
     category: "그랑알레그로",
     description: "공중에서 다리를 앞뒤로 크게 벌려 날아가는 대점프로, 다이내믹한 점프의 대표 동작.",
-    youtubeUrl: "https://www.youtube.com/watch?v=09gdpypuXvM",
   },
   {
     id: "sissonne",
@@ -149,7 +131,6 @@ export const BALLET_TERMS = [
     korean: "시손느",
     category: "그랑알레그로",
     description: "두 발에서 한 발 또는 두 발로 뛰어내리는 점프로, 방향과 리듬에 따라 다양한 변형이 있음.",
-    youtubeUrl: "https://www.youtube.com/watch?v=z4VEXZBwbNw",
   },
   {
     id: "glissade",
@@ -157,7 +138,6 @@ export const BALLET_TERMS = [
     korean: "글리사드",
     category: "알레그로",
     description: "미끄러지듯이 이동하는 연결 스텝으로, 다양한 점프 사이를 부드럽게 이어줌.",
-    youtubeUrl: "https://www.youtube.com/watch?v=PkU0WQ1vPFA",
   },
   {
     id: "pas-de-bourree",
@@ -165,7 +145,6 @@ export const BALLET_TERMS = [
     korean: "파드부레",
     category: "센터",
     description: "작은 스텝을 연속으로 밟으며 방향을 전환하거나 이동하는 동작.",
-    youtubeUrl: "https://www.youtube.com/watch?v=H9xWlNfvdR4",
   },
   {
     id: "balance",
@@ -173,7 +152,6 @@ export const BALLET_TERMS = [
     korean: "발랑세",
     category: "센터",
     description: "좌우 또는 앞뒤로 흔들리듯 리듬감 있게 이동하는 3박자 스텝.",
-    youtubeUrl: "https://www.youtube.com/watch?v=PRWavHnBMec",
   },
   {
     id: "pirouette",
@@ -181,7 +159,6 @@ export const BALLET_TERMS = [
     korean: "피루엣",
     category: "센터",
     description: "한 발을 축으로 회전하는 턴 동작으로, 중심과 스팟이 중요.",
-    youtubeUrl: "https://www.youtube.com/watch?v=Znb5sZk_YhA",
   },
   {
     id: "chaine",
@@ -189,7 +166,6 @@ export const BALLET_TERMS = [
     korean: "셰네",
     category: "센터",
     description: "작은 회전을 연속으로 이어가며 직선 또는 곡선을 그리며 이동하는 턴.",
-    youtubeUrl: "https://www.youtube.com/watch?v=kV7d62V2oNc",
   },
   {
     id: "pique-turn",
@@ -197,7 +173,6 @@ export const BALLET_TERMS = [
     korean: "피케 턴",
     category: "센터",
     description: "발끝으로 콕 찍으며 올라가 회전하는 턴 동작.",
-    youtubeUrl: "https://www.youtube.com/watch?v=uw1NQ5f1Lh8",
   },
   {
     id: "arabesque",
@@ -205,7 +180,6 @@ export const BALLET_TERMS = [
     korean: "아라베스크",
     category: "센터",
     description: "한 다리는 몸을 지탱하고 다른 다리는 뒤로 길게 뻗는 포즈.",
-    youtubeUrl: "https://www.youtube.com/watch?v=tq_2bgQ6F5U",
   },
   {
     id: "attitude",
@@ -213,7 +187,6 @@ export const BALLET_TERMS = [
     korean: "아티튜드",
     category: "센터",
     description: "한 다리를 굽힌 상태로 들어 올려 뒤나 옆으로 두는 포즈.",
-    youtubeUrl: "https://www.youtube.com/watch?v=IjdJkPyqP1Q",
   },
   {
     id: "brise",
@@ -221,7 +194,6 @@ export const BALLET_TERMS = [
     korean: "브리제",
     category: "알레그로",
     description: "다리를 휙 치며 공중에서 발을 교차시키는 빠른 점프.",
-    youtubeUrl: "https://www.youtube.com/watch?v=tGk6Z5aP5_o",
   },
   {
     id: "temps-leve",
@@ -229,7 +201,6 @@ export const BALLET_TERMS = [
     korean: "땅 르베",
     category: "알레그로",
     description: "한 발 또는 두 발로 가볍게 뛰어올랐다 같은 발로 착지하는 작은 점프.",
-    youtubeUrl: "https://www.youtube.com/watch?v=Q54X5GZbAl4",
   },
   {
     id: "passe",
@@ -237,7 +208,6 @@ export const BALLET_TERMS = [
     korean: "파세",
     category: "기초",
     description: "다리를 반대쪽 무릎 높이까지 끌어올려 붙이는 포지션으로, 턴 준비에 자주 사용.",
-    youtubeUrl: "https://www.youtube.com/watch?v=f8Q7a9-5JqQ",
   },
   {
     id: "coupe",
@@ -245,7 +215,6 @@ export const BALLET_TERMS = [
     korean: "쿠페",
     category: "기초",
     description: "발목 근처에 발을 두어 다음 동작으로 전환하는 작은 연결 스텝.",
-    youtubeUrl: "https://www.youtube.com/watch?v=iqjY7bQ1a6g",
   },
   {
     id: "port-de-bras",
@@ -253,7 +222,6 @@ export const BALLET_TERMS = [
     korean: "포르 드 브라",
     category: "기초",
     description: "팔을 부드럽게 이동시키는 동작 전체를 뜻하며, 상체 라인과 표현력을 키움.",
-    youtubeUrl: "https://www.youtube.com/watch?v=siY14bL-bx8",
   },
   {
     id: "epaulement",
@@ -261,7 +229,6 @@ export const BALLET_TERMS = [
     korean: "에포르망",
     category: "센터",
     description: "어깨와 상체의 방향을 사용해 라인을 만드는 상반신 사용법.",
-    youtubeUrl: "https://www.youtube.com/watch?v=4oLDpYG3HFk",
   },
   {
     id: "temps-lie",
@@ -269,7 +236,6 @@ export const BALLET_TERMS = [
     korean: "땅 리에",
     category: "센터",
     description: "발 포지션을 바꾸며 부드럽게 이동하는 연결 스텝으로, 음악성과 균형을 기름.",
-    youtubeUrl: "https://www.youtube.com/watch?v=8wJmYy1W3G4",
   },
   {
     id: "adagio",
@@ -277,7 +243,6 @@ export const BALLET_TERMS = [
     korean: "아다지오",
     category: "센터",
     description: "느리고 길게 이어지는 동작들을 묶어 부르는 말로, 균형과 라인을 강조.",
-    youtubeUrl: "https://www.youtube.com/watch?v=58Vw0bKpU7U",
   },
   {
     id: "allegro",
@@ -285,7 +250,6 @@ export const BALLET_TERMS = [
     korean: "알레그로",
     category: "알레그로",
     description: "빠르고 경쾌한 점프 콤비네이션 전체를 가리키는 용어.",
-    youtubeUrl: "https://www.youtube.com/watch?v=1j2Y8RZsYzA",
   },
   {
     id: "grand-allegro",
@@ -293,7 +257,6 @@ export const BALLET_TERMS = [
     korean: "그랑 알레그로",
     category: "그랑알레그로",
     description: "큰 점프와 넓은 이동이 포함된 다이내믹한 콤비네이션.",
-    youtubeUrl: "https://www.youtube.com/watch?v=H1yP4XFB5pM",
   },
   {
     id: "croise",
@@ -301,7 +264,6 @@ export const BALLET_TERMS = [
     korean: "크루아제",
     category: "기초",
     description: "무대 기준으로 몸이 대각선 방향을 향하며 다리가 교차된 포지션.",
-    youtubeUrl: "https://www.youtube.com/watch?v=iWKiXT0D0zY",
   },
   {
     id: "efface",
@@ -309,7 +271,6 @@ export const BALLET_TERMS = [
     korean: "에파세",
     category: "기초",
     description: "무대 기준으로 몸이 대각선을 향하면서 다리가 열려 보이는 포지션.",
-    youtubeUrl: "https://www.youtube.com/watch?v=0xgH4Q1XPfA",
   },
   {
     id: "en-face",
@@ -317,7 +278,6 @@ export const BALLET_TERMS = [
     korean: "앙 파스",
     category: "기초",
     description: "관객을 정면으로 향한 방향을 뜻하는 용어.",
-    youtubeUrl: "https://www.youtube.com/watch?v=jfsfShSgl_Q",
   },
   {
     id: "a-la-seconde",
