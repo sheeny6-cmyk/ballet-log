@@ -54,6 +54,9 @@ export default function Home() {
   const [expenseNote, setExpenseNote] = useState("");
   const [expenses, setExpenses] = useState([]);
 
+  const [editingExpenseId, setEditingExpenseId] = useState(null);
+  const [editingClassLogId, setEditingClassLogId] = useState(null);
+
   const isClient = typeof window !== "undefined";
 
   // Load from localStorage
@@ -169,31 +172,80 @@ export default function Home() {
   const saveClassLog = () => {
     if (!classDate || selectedTerms.length === 0) return;
     const newLog = {
-      id: Date.now(),
+      id: editingClassLogId ?? Date.now(),
       date: classDate,
       termIds: selectedTerms.map((t) => t.id),
       memo: classMemo,
       feedback: classFeedback,
     };
-    setClassLogs((prev) => [newLog, ...prev]);
+    setClassLogs((prev) => {
+      if (editingClassLogId == null) return [newLog, ...prev];
+      return prev.map((l) => (l.id === editingClassLogId ? newLog : l));
+    });
     setSelectedTerms([]);
     setClassMemo("");
     setClassFeedback("");
+    setEditingClassLogId(null);
   };
 
   const saveExpense = () => {
     const amount = Number(expenseAmount);
     if (!expenseMonth || !amount || amount <= 0) return;
     const newExpense = {
-      id: Date.now(),
+      id: editingExpenseId ?? Date.now(),
       category: expenseCategory,
       month: expenseMonth,
       amount,
       note: expenseNote,
     };
-    setExpenses((prev) => [newExpense, ...prev]);
+    setExpenses((prev) => {
+      if (editingExpenseId == null) return [newExpense, ...prev];
+      return prev.map((e) => (e.id === editingExpenseId ? newExpense : e));
+    });
     setExpenseAmount("");
     setExpenseNote("");
+    setEditingExpenseId(null);
+  };
+
+  const startEditExpense = (expense) => {
+    setEditingExpenseId(expense.id);
+    setExpenseCategory(expense.category);
+    setExpenseMonth(expense.month);
+    setExpenseAmount(String(expense.amount));
+    setExpenseNote(expense.note ?? "");
+  };
+
+  const deleteExpense = (id) => {
+    if (!window.confirm("이 지출 항목을 삭제할까요?")) return;
+    setExpenses((prev) => prev.filter((e) => e.id !== id));
+    if (editingExpenseId === id) {
+      setEditingExpenseId(null);
+      setExpenseAmount("");
+      setExpenseNote("");
+    }
+  };
+
+  const startEditClassLog = (log) => {
+    setEditingClassLogId(log.id);
+    setClassDate(log.date);
+    setSelectedTerms(
+      log.termIds
+        .map((id) => BALLET_TERMS.find((t) => t.id === id))
+        .filter(Boolean)
+    );
+    setClassMemo(log.memo ?? "");
+    setClassFeedback(log.feedback ?? "");
+  };
+
+  const deleteClassLog = (id) => {
+    if (!window.confirm("이 수업 기록을 삭제할까요?")) return;
+    setClassLogs((prev) => prev.filter((l) => l.id !== id));
+    if (editingClassLogId === id) {
+      setEditingClassLogId(null);
+      setSelectedTerms([]);
+      setClassMemo("");
+      setClassFeedback("");
+    }
   };
 
   return (
@@ -238,6 +290,10 @@ export default function Home() {
               classFeedback={classFeedback}
               setClassFeedback={setClassFeedback}
               saveClassLog={saveClassLog}
+              editingClassLogId={editingClassLogId}
+              setEditingClassLogId={setEditingClassLogId}
+              startEditClassLog={startEditClassLog}
+              deleteClassLog={deleteClassLog}
               groupedClassLogs={groupedClassLogs}
             />
           )}
@@ -253,6 +309,10 @@ export default function Home() {
               expenseNote={expenseNote}
               setExpenseNote={setExpenseNote}
               saveExpense={saveExpense}
+              editingExpenseId={editingExpenseId}
+              setEditingExpenseId={setEditingExpenseId}
+              startEditExpense={startEditExpense}
+              deleteExpense={deleteExpense}
               expenses={expenses}
               monthlyTotals={monthlyTotals}
               yearlyTotal={yearlyTotal}
@@ -412,8 +472,16 @@ function ClassLogTab({
   classFeedback,
   setClassFeedback,
   saveClassLog,
+  editingClassLogId,
+  setEditingClassLogId,
+  startEditClassLog,
+  deleteClassLog,
   groupedClassLogs,
 }) {
+  const [detailLog, setDetailLog] = useState(null);
+
+  const closeDetail = () => setDetailLog(null);
+
   return (
     <div className="space-y-4">
       <div className="rounded-2xl bg-purple-50/70 p-3">
@@ -513,8 +581,22 @@ function ClassLogTab({
           className="w-full rounded-full bg-purple-500 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-purple-600 disabled:bg-purple-200"
           disabled={!classDate || selectedTerms.length === 0}
         >
-          수업 기록 저장하기
+          {editingClassLogId == null ? "수업 기록 저장하기" : "수업 기록 수정 저장"}
         </button>
+        {editingClassLogId != null && (
+          <button
+            onClick={() => {
+              setEditingClassLogId(null);
+              setClassDate(new Date().toISOString().slice(0, 10));
+              setClassSearch("");
+              setClassMemo("");
+              setClassFeedback("");
+            }}
+            className="w-full rounded-full border border-purple-200 bg-white py-2 text-xs font-semibold text-purple-600 shadow-sm transition hover:bg-purple-50"
+          >
+            수정 취소
+          </button>
+        )}
       </div>
 
       <div className="space-y-2 pb-1">
@@ -542,9 +624,11 @@ function ClassLogTab({
             </div>
             <div className="space-y-2">
               {groupedClassLogs.map[date].map((log) => (
-                <div
+                <button
                   key={log.id}
-                  className="rounded-xl bg-purple-50/80 px-2.5 py-2"
+                  type="button"
+                  onClick={() => setDetailLog(log)}
+                  className="w-full text-left rounded-xl bg-purple-50/80 px-2.5 py-2 transition hover:bg-purple-50"
                 >
                   <div className="mb-1 flex flex-wrap gap-1">
                     {log.termIds.map((id) => {
@@ -570,12 +654,94 @@ function ClassLogTab({
                       선생님: {log.feedback}
                     </p>
                   )}
-                </div>
+                </button>
               ))}
             </div>
           </div>
         ))}
       </div>
+
+      {detailLog && (
+        <div className="fixed inset-0 z-20 flex items-end justify-center bg-black/30 p-4">
+          <div className="w-full max-w-md rounded-3xl bg-white p-4 shadow-xl">
+            <div className="mb-2 flex items-start justify-between gap-2">
+              <div>
+                <p className="text-xs font-semibold text-purple-600">
+                  {detailLog.date}
+                </p>
+                <p className="mt-0.5 text-[11px] text-zinc-500">
+                  수업 기록 상세
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={closeDetail}
+                className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600"
+              >
+                닫기
+              </button>
+            </div>
+
+            <div className="mb-3 flex flex-wrap gap-1">
+              {detailLog.termIds.map((id) => {
+                const term = BALLET_TERMS.find((t) => t.id === id);
+                if (!term) return null;
+                return (
+                  <span
+                    key={id}
+                    className="rounded-full bg-purple-50 px-2 py-0.5 text-[11px] italic text-purple-700"
+                  >
+                    {term.french}
+                  </span>
+                );
+              })}
+            </div>
+
+            {detailLog.memo && (
+              <div className="mb-2 rounded-2xl bg-zinc-50 px-3 py-2">
+                <p className="text-[10px] font-semibold text-zinc-500">메모</p>
+                <p className="mt-1 text-xs leading-snug text-zinc-700">
+                  {detailLog.memo}
+                </p>
+              </div>
+            )}
+
+            {detailLog.feedback && (
+              <div className="mb-3 rounded-2xl bg-purple-50/60 px-3 py-2">
+                <p className="text-[10px] font-semibold text-purple-600">
+                  선생님 피드백
+                </p>
+                <p className="mt-1 text-xs leading-snug text-purple-700">
+                  {detailLog.feedback}
+                </p>
+              </div>
+            )}
+
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  startEditClassLog(detailLog);
+                  closeDetail();
+                }}
+                className="flex-1 rounded-full bg-purple-500 py-2 text-xs font-semibold text-white"
+              >
+                ✏️ 수정하기
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  closeDetail();
+                  deleteClassLog(detailLog.id);
+                }}
+                className="flex-1 rounded-full border border-red-200 bg-white py-2 text-xs font-semibold text-red-600"
+              >
+                🗑️ 삭제하기
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -590,6 +756,10 @@ function ExpenseTab({
   expenseNote,
   setExpenseNote,
   saveExpense,
+  editingExpenseId,
+  setEditingExpenseId,
+  startEditExpense,
+  deleteExpense,
   expenses,
   monthlyTotals,
   yearlyTotal,
@@ -662,8 +832,21 @@ function ExpenseTab({
           disabled={!expenseMonth || !expenseAmount}
           className="mt-1 w-full rounded-full bg-emerald-500 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-600 disabled:bg-emerald-200"
         >
-          비용 추가하기
+          {editingExpenseId == null ? "비용 추가하기" : "비용 수정 저장"}
         </button>
+        {editingExpenseId != null && (
+          <button
+            type="button"
+            onClick={() => {
+              setEditingExpenseId(null);
+              setExpenseAmount("");
+              setExpenseNote("");
+            }}
+            className="mt-2 w-full rounded-full border border-emerald-200 bg-white py-2 text-xs font-semibold text-emerald-700 shadow-sm transition hover:bg-emerald-50"
+          >
+            수정 취소
+          </button>
+        )}
       </div>
 
       <div className="rounded-2xl bg-emerald-50/80 p-3">
@@ -704,7 +887,7 @@ function ExpenseTab({
             {expenses.map((e) => (
               <div
                 key={e.id}
-                className="flex items-center justify-between rounded-xl border border-emerald-50 bg-white/90 px-2.5 py-1.5 text-[11px]"
+                className="flex items-center gap-2 rounded-xl border border-emerald-50 bg-white/90 px-2.5 py-1.5 text-[11px]"
               >
                 <div className="flex-1">
                   <p className="font-medium text-emerald-700">
@@ -717,6 +900,26 @@ function ExpenseTab({
                 <p className="ml-2 text-[11px] font-semibold text-emerald-600">
                   {e.amount.toLocaleString()}원
                 </p>
+                <div className="flex shrink-0 items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => startEditExpense(e)}
+                    className="rounded-full bg-emerald-50 px-2 py-1 text-[11px] font-semibold text-emerald-700"
+                    aria-label="지출 수정"
+                    title="수정"
+                  >
+                    ✏️
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => deleteExpense(e.id)}
+                    className="rounded-full bg-red-50 px-2 py-1 text-[11px] font-semibold text-red-600"
+                    aria-label="지출 삭제"
+                    title="삭제"
+                  >
+                    🗑️
+                  </button>
+                </div>
               </div>
             ))}
           </div>
