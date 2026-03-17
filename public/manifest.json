@@ -1,7 +1,7 @@
 {
-  "name": "발레로그",
-  "short_name": "발레로그",
-  "description": "취미 발레인을 위한 발레 용어, 수업 기록, 비용 관리를 한 번에 정리하는 발레로그.",
+  "name": "발레노트 Ballet Note",
+  "short_name": "발레노트",
+  "description": "취미 발레인을 위한 발레 용어, 수업 기록, 비용 관리를 한 번에 정리하는 발레노트 Ballet Note.",
   "lang": "ko-KR",
   "start_url": "/",
   "display": "standalone",

@@ -285,7 +285,6 @@ export const BALLET_TERMS = [
     korean: "알라 세콩드",
     category: "기초",
     description: "두 번째 포지션, 또는 옆 방향으로 다리를 드는 동작을 가리키는 말.",
-    youtubeUrl: "https://www.youtube.com/watch?v=8a8B5bCSx1g",
   },
   {
     id: "en-dedans",
@@ -293,7 +292,6 @@ export const BALLET_TERMS = [
     korean: "앙 드당",
     category: "기초",
     description: "안쪽으로, 몸 중심을 향하는 방향의 턴이나 원을 뜻하는 말.",
-    youtubeUrl: "https://www.youtube.com/watch?v=9Z7tqKXf1sE",
   },
   {
     id: "en-dehors",
@@ -301,7 +299,6 @@ export const BALLET_TERMS = [
     korean: "앙 드오르",
     category: "기초",
     description: "바깥쪽으로, 몸 중심에서 멀어지는 방향의 턴이나 원을 뜻하는 말.",
-    youtubeUrl: "https://www.youtube.com/watch?v=cq6s7T7N1vg",
   },
   {
     id: "tour-en-lair",
@@ -309,7 +306,6 @@ export const BALLET_TERMS = [
     korean: "투르 앙 레르",
     category: "그랑알레그로",
     description: "공중에서 몸을 회전한 뒤 착지하는 남성 테크닉 대표 턴.",
-    youtubeUrl: "https://www.youtube.com/watch?v=Kx7YhQSmvZ8",
   },
   {
     id: "pas-de-chat",
@@ -317,7 +313,6 @@ export const BALLET_TERMS = [
     korean: "파 드 샤",
     category: "알레그로",
     description: "고양이가 점프하듯 두 다리를 순서대로 들어 올리며 뛰는 점프.",
-    youtubeUrl: "https://www.youtube.com/watch?v=1pq0I6Swm1U",
   },
   {
     id: "temps-de-cuisse",
@@ -325,7 +320,6 @@ export const BALLET_TERMS = [
     korean: "땅 드 뀌스",
     category: "알레그로",
     description: "허벅지의 움직임을 강조하는 빠른 준비 동작이 포함된 점프 패턴.",
-    youtubeUrl: "https://www.youtube.com/watch?v=iEoQk9Wn-0c",
   },
   {
     id: "ferme",
@@ -333,7 +327,6 @@ export const BALLET_TERMS = [
     korean: "페르메",
     category: "기초",
     description: "닫힌 포지션을 뜻하는 용어로, 동작 이름 뒤에 붙어 사용.",
-    youtubeUrl: "https://www.youtube.com/watch?v=yieA8SkKQSA",
   },
   {
     id: "ouvert",
@@ -341,7 +334,6 @@ export const BALLET_TERMS = [
     korean: "우베르",
     category: "기초",
     description: "열린 포지션을 뜻하는 용어로, 다리나 팔의 방향을 설명할 때 사용.",
-    youtubeUrl: "https://www.youtube.com/watch?v=LLgE1B1gq3E",
   },
   {
     id: "pas-de-valse",
@@ -349,7 +341,6 @@ export const BALLET_TERMS = [
     korean: "파 드 왈츠",
     category: "센터",
     description: "왈츠 리듬의 3박자 스텝으로, 회전과 이동이 함께 이루어짐.",
-    youtubeUrl: "https://www.youtube.com/watch?v=yE7hM4QYxeg",
   },
   {
     id: "chasse",
@@ -357,7 +348,6 @@ export const BALLET_TERMS = [
     korean: "샤세",
     category: "센터",
     description: "한 발이 다른 발을 쫓아가듯 미끄러지며 이동하는 스텝.",
-    youtubeUrl: "https://www.youtube.com/watch?v=0qyxF2A5k5o",
   },
   {
     id: "demi-pointe",
@@ -365,7 +355,6 @@ export const BALLET_TERMS = [
     korean: "드미 포앙트",
     category: "기초",
     description: "완전한 토슈즈가 아닌 까치발 상태, 또는 그 상태에서 서는 것을 의미.",
-    youtubeUrl: "https://www.youtube.com/watch?v=O1qRZJh9N0Q",
   },
   {
     id: "grande-rond-de-jambe",
@@ -373,7 +362,6 @@ export const BALLET_TERMS = [
     korean: "그랑 롱 드 잠",
     category: "센터",
     description: "다리를 크게 원을 그리며 돌리는 동작으로, 유연성과 중심을 함께 요구.",
-    youtubeUrl: "https://www.youtube.com/watch?v=2m8hb3Y7M5s",
   },
 ];
 

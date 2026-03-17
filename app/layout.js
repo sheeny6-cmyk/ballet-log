@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "발레로그",
+  title: "발레노트 Ballet Note",
   description:
-    "취미 발레인을 위한 발레 용어사전, 수업 기록, 비용 관리 PWA 앱.",
+    "취미 발레인을 위한 발레 용어사전, 수업 기록, 비용 관리 PWA 앱 - 발레노트 Ballet Note.",
   manifest: "/manifest.json",
   icons: {
     icon: "/icons/icon-192x192.png",

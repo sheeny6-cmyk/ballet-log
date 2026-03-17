@@ -202,7 +202,7 @@ export default function Home() {
         {/* Header */}
         <header className="px-4 pt-6 pb-3 border-b border-pink-100 bg-white/80 backdrop-blur-sm">
           <h1 className="text-xl font-semibold text-pink-600">
-            발레로그 Ballet Log
+            발레노트 Ballet Note
           </h1>
           <p className="mt-1 text-xs text-zinc-500">
             취미 발레인의 연습 · 기록 · 리듬을 한 곳에
@@ -377,17 +377,7 @@ function DictionaryTab({
               <p className="mt-1 text-xs leading-snug text-zinc-600">
                 {term.description}
               </p>
-              <div className="mt-2 flex justify-between text-xs">
-                {term.youtubeUrl && (
-                  <a
-                    href={term.youtubeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full bg-pink-500 px-3 py-1 text-[11px] font-medium text-white shadow-sm transition hover:bg-pink-600"
-                  >
-                    유튜브로 자세히 보기
-                  </a>
-                )}
+              <div className="mt-2 flex justify-end text-xs">
                 {favorites.length > 0 && (
                   <span className="ml-auto text-[10px] text-pink-400">
                     즐겨찾기 {favorites.length}개
