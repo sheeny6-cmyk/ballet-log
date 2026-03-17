@@ -16,6 +16,9 @@ export const metadata = {
   description:
     "취미 발레인을 위한 발레 용어사전, 수업 기록, 비용 관리 PWA 앱.",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icons/icon-192x192.png",
+  },
 };
 
 export default function RootLayout({ children }) {
